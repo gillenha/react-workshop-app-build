@@ -16,13 +16,17 @@ class Shop extends Component {
 		this.setState({products: first10});
 	}
 
+	handleAdd = () => {
+		console.log('item added!');
+	}
+
 	render() {
 		return (
 			<div className="shop">
 				<div className="product-container">
 					<h2>Shop Now</h2>
 					{
-						this.state.products.map(prod => <Product key={prod.id} prodInfo={prod}></Product>)
+						this.state.products.map(prod => <Product key={prod.id} prodInfo={prod} handleAdd={this.handleAdd}></Product>)
 					}
 				</div>
 				<div className="cart-container">
